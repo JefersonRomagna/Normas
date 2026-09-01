@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de PDF</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <!-- Substitua "seu-arquivo.pdf" pelo nome exato do seu PDF -->
+    <iframe src="conexão-micro-mini-geradores-out2020.pdf"></iframe>
+    <iframe src="N3210001-Tensao-Secundaria velha.pdf"></iframe>
+    <iframe src="N-321.0001 _ NOVA _ dez25.pdf"></iframe>
+    <iframe src="N3210002 - Tensão-Primária.pdf"></iframe>
+    <iframe src="N-3210003-Coletivo-Dez-2023.pdf"></iframe>
+</body>
+</html>
