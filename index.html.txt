@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizador de PDF</title>
+    <title>Visualizador de Documentos Técnicos</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; background-color: #f5f5f7; color: #1d1d1f; }
+        
+        /* Menu Lateral */
+        .sidebar { width: 320px; background-color: #ffffff; border-right: 1px solid #d2d2d7; padding: 20px; display: flex; flex-direction: column; gap: 15px; overflow-y: auto; }
+        .sidebar h2 { font-size: 18px; margin: 0 0 10px 0; color: #000000; font-weight: 600; }
+        
+        /* Botões da Lista */
+        .pdf-link { display: block; padding: 12px 14px; background-color: #f5f5f7; border: 1px solid #e5e5ea; border-radius: 8px; color: #0066cc; text-decoration: none; font-size: 14px; font-weight: 500; line-height: 1.4; word-break: break-word; transition: all 0.2s ease; }
+        .pdf-link:hover { background-color: #0066cc; color: #ffffff; border-color: #0066cc; }
+        
+        /* Área do Visualizador */
+        .viewer-container { flex: 1; height: 100%; position: relative; background-color: #efeef4; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
     </style>
 </head>
 <body>
-    <!-- Substitua "seu-arquivo.pdf" pelo nome exato do seu PDF -->
-    <iframe src="conexão-micro-mini-geradores-out2020.pdf"></iframe>
-    <iframe src="N3210001-Tensao-Secundaria velha.pdf"></iframe>
-    <iframe src="N-321.0001 _ NOVA _ dez25.pdf"></iframe>
-    <iframe src="N3210002 - Tensão-Primária.pdf"></iframe>
-    <iframe src="N-3210003-Coletivo-Dez-2023.pdf"></iframe>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <h2>Documentos</h2>
+        
+        <a class="pdf-link" href="n-3210003-coletivo-dez-2023.pdf" target="pdf-viewer">
+            📄 N-3210003 - Coletivo (Dez 2023)
+        </a>
+        
+        <a class="pdf-link" href="n3210002-tensao-primaria.pdf" target="pdf-viewer">
+            📄 N3210002 - Tensão Primária
+        </a>
+        
+        <a class="pdf-link" href="n-321-0001-nova-dez25.pdf" target="pdf-viewer">
+            📄 N-321.0001 - NOVA (Dez 2025)
+        </a>
+        
+        <a class="pdf-link" href="n3210001-tensao-secundaria-velha.pdf" target="pdf-viewer">
+            📄 N3210001 - Tensão Secundária (Velha)
+        </a>
+        
+        <a class="pdf-link" href="conexao-micro-mini-geradores-out2020.pdf" target="pdf-viewer">
+            📄 Conexão Micro/Mini Geradores (Out 2020)
+        </a>
+    </div>
+
+    <!-- Área de Exibição do PDF (Inicia com o primeiro documento aberto) -->
+    <div class="viewer-container">
+        <iframe name="pdf-viewer" src="n-3210003-coletivo-dez-2023.pdf"></iframe>
+    </div>
+
 </body>
 </html>
